@@ -1,16 +1,7 @@
 import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import {
-  FaPhone,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaPhoneAlt,
-  FaEnvelope,
-} from 'react-icons/fa'
+import { FaPhone, FaCalendarAlt, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 
 import clsx from 'clsx'
 
