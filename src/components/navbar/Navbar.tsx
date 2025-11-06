@@ -218,7 +218,7 @@ const Navbar = () => {
             onClick={() => {
               handleNavigation('contacts', 'Consultation')
             }}
-            className="inline-block rounded-md bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-md shadow-sm"
+            className="inline-block  bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-md shadow-sm"
           >
             Записаться на прием
           </button>
