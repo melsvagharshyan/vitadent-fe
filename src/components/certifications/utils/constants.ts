@@ -2,39 +2,36 @@ export const certifications = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754625985/vahan/AA_N%C2%BA_018793_page-0001_1_-Photoroom_ygnhg0.png',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450748/IMG_20140916_113055_htgbp3.jpg',
   },
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754626003/vahan/AD_N%C2%BA_096225_page-0001-Photoroom_phdacq.png',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450746/IMG_20140916_113012_hfzauu.jpg',
   },
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754311799/vahan/White_and_Grey_Bordered_Simple_Certificate_of_Appreciation_dvjpqd.png',
-  },
-  {
-    id: 4,
-    image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754657321/vahan/Blue_Minimalist_Certificate_Of_Achievement_q0bhte.png',
-  },
-  {
-    id: 5,
-    image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754726204/vahan/Black_White_and_Gold_Elegant_Modern_Medical_Appreciation_Certificate_1_jd1dcw.png',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450746/IMG_20140916_113037_hiwhbh.jpg',
   },
 ]
 
 export const certificationsLarge = [
   {
     id: 1,
-    image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754660267/vahan/2025-08-08_06.36.38_g2wjwk.jpg',
+    image: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450730/2018.--003_d3gu9n.jpg',
   },
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754660272/vahan/2025-08-08_06.36.51_kyk6dh.jpg',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450747/IMG_20140916_113231_cfhpnh.jpg',
+  },
+  {
+    id: 3,
+    image: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450729/2018.---001_kkqq3v.jpg',
+  },
+  {
+    id: 4,
+    image: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762450730/2018.--002_tcon9s.jpg',
   },
 ]

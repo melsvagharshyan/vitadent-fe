@@ -67,12 +67,12 @@ export const ContactModal: FC<Props> = ({ isOpen, onClose }) => {
     try {
       const response = await fetch(QRImage)
       const blob = await response.blob()
-      const file = new File([blob], 'Vahan.png', { type: 'image/png' })
+      const file = new File([blob], 'Vita.png', { type: 'image/png' })
 
       if (navigator.share && (navigator as any).canShare?.({ files: [file] })) {
         await navigator.share({
           title: 'QR-код визитки',
-          text: 'Этот QR-код ведёт на сайт стоматолога Вагана Варданяна: www.drvardanyan.life',
+          text: 'Этот QR-код ведёт на сайт Vitadent',
           files: [file],
         })
         return
@@ -81,7 +81,7 @@ export const ContactModal: FC<Props> = ({ isOpen, onClose }) => {
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = 'Vahan.png'
+      link.download = 'Vita.png'
       link.click()
       URL.revokeObjectURL(url)
     } catch (error) {
@@ -97,14 +97,14 @@ export const ContactModal: FC<Props> = ({ isOpen, onClose }) => {
       <ul className="space-y-4 text-base md:text-lg text-gray-800">
         <li className="flex items-center gap-3 py-1">
           <FaEnvelope className="text-black text-xl" />
-          <a href="mailto:vahan.vardanyan.97@bk.ru" className="hover:underline">
-            vahan.vardanyan.97@bk.ru
+          <a href="mailto:vita.dent71@mail.ru" className="hover:underline">
+            vita.dent71@mail.ru
           </a>
         </li>
         <li className="flex items-center gap-3 py-1">
           <FaPhone className="text-black text-xl" />
-          <a href="tel:+79101660102" className="hover:underline">
-            +7 (910) 166-01-02
+          <a href="tel:+84876261500" className="hover:underline">
+            8(487 62) 6 15 00
           </a>
         </li>
         <li className="flex items-center gap-3 py-1">

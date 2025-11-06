@@ -18,13 +18,13 @@ const RoutinePage = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen pt-30 bg-gradient-to-br from-white via-cyan-50 to-cyan-100 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen pt-30 bg-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-screen-xl mx-auto">
           {/* Header with back button */}
           <div className="flex items-center mb-8">
             <button
               onClick={handleBack}
-              className="flex cursor-pointer items-center gap-2 text-cyan-600 hover:text-cyan-800 transition-colors duration-200"
+              className="flex cursor-pointer items-center gap-2 text-[#1DA6E2] hover:text-[#0284e4] transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Назад</span>
@@ -33,7 +33,7 @@ const RoutinePage = () => {
 
           {/* Page Title */}
           <header className="text-center mb-12">
-            <h1 className="text-3xl sm:text-5xl font-bold uppercase font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text mb-4">
+            <h1 className="text-3xl sm:text-5xl font-bold uppercase font-sans bg-gradient-to-r text-[#1DA6E2] bg-clip-text mb-4">
               Наш рабочий процесс
             </h1>
             <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
@@ -59,7 +59,7 @@ const RoutinePage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-cyan-700 transition-colors duration-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#1DA6E2] transition-colors duration-200">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>

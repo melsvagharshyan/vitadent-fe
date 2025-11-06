@@ -24,7 +24,7 @@ const VideoGallery = ({ videos, heading, description }: VideoGalleryProps) => {
       {(heading || description) && (
         <header className="text-center mb-8">
           {heading && (
-            <h2 className="text-2xl sm:text-3xl font-bold uppercase font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text">
+            <h2 className="text-2xl sm:text-3xl font-bold uppercase font-sans text-[#1DA6E2] tracking-wide">
               {heading}
             </h2>
           )}
@@ -42,7 +42,6 @@ const VideoGallery = ({ videos, heading, description }: VideoGalleryProps) => {
                 const el = videoRefs.current[v.id] as any
                 try {
                   if (el) {
-                    // Ensure audio is on when user explicitly clicks
                     try {
                       el.muted = false
                       el.volume = 1
@@ -74,9 +73,7 @@ const VideoGallery = ({ videos, heading, description }: VideoGalleryProps) => {
                       return
                     }
                   }
-                } catch {
-                  // fallback to modal below
-                }
+                } catch {}
               }
               setOpenVideo(v)
             }}
@@ -98,9 +95,9 @@ const VideoGallery = ({ videos, heading, description }: VideoGalleryProps) => {
               />
 
               {/* Play overlay */}
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-[#1DA6E2]/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 text-gray-800 font-semibold shadow-md group-hover:scale-105 transition-transform">
+                <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1DA6E2]/90 text-white font-semibold shadow-md group-hover:scale-105 transition-transform">
                   <Play size={18} /> Смотреть
                 </span>
               </div>

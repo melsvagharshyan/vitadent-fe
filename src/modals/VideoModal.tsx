@@ -22,25 +22,21 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
       document.body.style.overflow = 'hidden'
       document.body.style.paddingRight = `${scrollBarWidth}px`
 
-      // Try to enter fullscreen on mobile sizes
       const isMobileViewport = window.matchMedia('(max-width: 768px)').matches
       const tryEnterFullscreen = async () => {
         if (!isMobileViewport || !videoRef.current) return
         const video = videoRef.current as any
         try {
-          // Since user clicked to open modal, try to unmute and play with sound
           try {
             video.muted = false
             video.volume = 1
             video.currentTime = 0
             await video.play()
           } catch {}
-          // iOS Safari
           if (typeof video.webkitEnterFullscreen === 'function') {
             video.webkitEnterFullscreen()
             return
           }
-          // Standard Fullscreen API
           if (typeof video.requestFullscreen === 'function') {
             await video.requestFullscreen()
             try {
@@ -48,22 +44,19 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
             } catch {}
             return
           }
-          if (typeof (document as any).webkitFullscreenElement !== 'undefined' &&
-              typeof video.webkitRequestFullscreen === 'function') {
+          if (
+            typeof (document as any).webkitFullscreenElement !== 'undefined' &&
+            typeof video.webkitRequestFullscreen === 'function'
+          ) {
             video.webkitRequestFullscreen()
             try {
               await video.play()
             } catch {}
           }
-        } catch {
-          // ignore if browser blocks programmatic fullscreen
-        }
+        } catch {}
       }
-
-      // Give the video a tick to mount before requesting fullscreen
       setTimeout(tryEnterFullscreen, 50)
     } else {
-      // Stop video if closing
       try {
         videoRef.current?.pause()
         if (videoRef.current) videoRef.current.currentTime = 0
@@ -83,9 +76,9 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
       const video = videoRef.current as any
       const isFullscreen = !!(
         document.fullscreenElement ||
-        (video && (video.webkitDisplayingFullscreen || video.webkitPresentationMode === 'fullscreen'))
+        (video &&
+          (video.webkitDisplayingFullscreen || video.webkitPresentationMode === 'fullscreen'))
       )
-      // If user exited fullscreen (e.g., tapped Done), close modal entirely
       if (!isFullscreen && isOpen) {
         onClose()
       }
@@ -115,9 +108,7 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
       if (video && typeof video.webkitExitFullscreen === 'function') {
         video.webkitExitFullscreen()
       }
-    } catch {
-      // ignore
-    }
+    } catch {}
   }
 
   const handleOverlayClick = async (e: React.MouseEvent<HTMLDivElement>) => {
@@ -147,13 +138,13 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
             onClose()
           }}
           aria-label="Закрыть"
-          className="absolute top-3 right-3 z-10 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 cursor-pointer shadow"
+          className="absolute top-3 right-3 z-10 bg-[#1DA6E2]/90 hover:bg-[#0284e4] text-white rounded-full p-2 cursor-pointer shadow"
         >
           <IoClose size={20} />
         </button>
 
         {title && (
-          <div className="px-4 py-3 text-white bg-gradient-to-r from-cyan-600/60 to-transparent absolute top-0 left-0 right-0 pointer-events-none">
+          <div className="px-4 py-3 text-white bg-[#1DA6E2]/60 absolute top-0 left-0 right-0 pointer-events-none">
             <h3 className="text-sm sm:text-base md:text-lg font-semibold drop-shadow">{title}</h3>
           </div>
         )}
@@ -176,5 +167,3 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
 }
 
 export default VideoModal
-
-

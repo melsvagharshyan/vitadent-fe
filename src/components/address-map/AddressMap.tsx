@@ -44,7 +44,7 @@ const AddressMap = () => {
         href={GOOGLE_MAPS_LINK}
         target="_blank"
         rel="noreferrer noopener"
-        className="flex-1 inline-flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] text-white py-2.5 px-4 rounded-sm font-semibold hover:opacity-90 transition-colors"
+        className="flex-1 inline-flex rounded-md items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] text-white py-2.5 px-4  font-semibold hover:opacity-90 transition-colors"
       >
         Открыть в Google Maps <FaExternalLinkAlt size={14} />
       </a>
@@ -52,7 +52,7 @@ const AddressMap = () => {
         href={YANDEX_MAPS_LINK}
         target="_blank"
         rel="noreferrer noopener"
-        className="flex-1 inline-flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] text-white py-2.5 px-4 rounded-sm font-semibold hover:opacity-90 transition-colors"
+        className="flex-1 rounded-md inline-flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] text-white py-2.5 px-4  font-semibold hover:opacity-90 transition-colors"
       >
         Открыть в Яндекс.Картах <FaExternalLinkAlt size={14} />
       </a>
@@ -122,7 +122,6 @@ const AddressMap = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

@@ -6,9 +6,7 @@ import Header from '~/components/header/Header'
 import About from '~/components/about/About'
 import Recommendations from '~/components/recommendations/Recommendations'
 import Education from '~/components/Education/Education'
-import Appointment from '~/components/consultation/Consultation'
 import Routine from '~/components/routine/Routine'
-import DentistBusinessCard from '~/components/visit-card/DentistBusinessCard'
 import VideoGallery from '~/components/video-gallery/VideoGallery'
 import { Link } from 'react-router-dom'
 import Licenses from '~/components/certifications/Licenses'
@@ -32,7 +30,7 @@ export const appRoutes: RouteObject[] = [
         <About />
         <Education />
         <Licenses />
-        <section className="w-full bg-gradient-to-r from-white to-cyan-200 py-8">
+        <section className="w-full bg-white py-8">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <VideoGallery
               heading="Видеопортфолио нашей практики"
@@ -54,10 +52,11 @@ export const appRoutes: RouteObject[] = [
                 },
               ]}
             />
+
             <div className="text-center mt-6">
               <Link
                 to="/videos"
-                className="inline-block relative cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-cyan-200 to-cyan-500 text-white py-3 px-8 rounded-full font-semibold group transform hover:scale-105"
+                className="inline-block relative cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-[#1DA6E2] hover:bg-[#0284e4] text-white py-3 px-8 rounded-md font-semibold group transform hover:scale-105"
               >
                 <span className="relative z-10">Показать больше</span>
                 <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
@@ -67,7 +66,6 @@ export const appRoutes: RouteObject[] = [
         </section>
         <Routine />
         <Recommendations />
-        <Appointment />
         <AddressMap />
       </>
     ),
@@ -91,10 +89,6 @@ export const appRoutes: RouteObject[] = [
   {
     path: '/client-results',
     element: <ClientResultsPage />,
-  },
-  {
-    path: '/visit-card',
-    element: <DentistBusinessCard />,
   },
   {
     path: '*',

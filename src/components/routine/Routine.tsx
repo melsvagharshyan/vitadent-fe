@@ -33,17 +33,14 @@ const Routine = () => {
   const handleShowMoreResults = () => navigate('/client-results')
 
   return (
-    <section
-      id="routine"
-      className="w-full bg-gradient-to-r from-white to-cyan-200 py-16 px-4 sm:px-6 lg:px-8"
-    >
+    <section id="routine" className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
       {/* Routine Header */}
       <header className="max-w-screen-xl mx-auto text-center mb-10 sm:mb-12">
-        <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text">
+        <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans text-[#1DA6E2]">
           Наша рутина
         </h2>
         <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
-          Заглянем за кулисы работы клиники Варданян
+          Заглянем за кулисы работы клиники Вита Дент
         </p>
       </header>
 
@@ -51,17 +48,25 @@ const Routine = () => {
       <div className="max-w-screen-xl mx-auto">
         <Slider {...sliderSettings}>
           {routineImages.map((item) => (
+            // enforce equal slide height with responsive fixed wrapper
             <div key={item.id} className="px-2">
-              <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-56 sm:h-64 md:h-72 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                  <p className="text-sm text-gray-200">{item.description}</p>
+              <div className="h-56 sm:h-64 md:h-72 lg:h-80 flex">
+                {/* card fills full height */}
+                <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 w-full flex flex-col h-full bg-white">
+                  <div className="w-full">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                  </div>
+
+                  {/* keep text area fixed behavior so card height is stable */}
+                  <div className="p-4 text-white flex-grow flex flex-col justify-end overflow-hidden">
+                    <h3 className="text-lg font-semibold mb-1 text-gray-900">{item.title}</h3>
+                    <p className="text-sm text-gray-600 line-clamp-3">{item.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -73,7 +78,7 @@ const Routine = () => {
       <div className="mt-10 sm:mt-16 flex justify-center">
         <button
           onClick={handleShowMore}
-          className="relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer bg-gradient-to-r from-cyan-200 to-cyan-500 text-white py-3 px-8 rounded-full font-semibold group transform hover:scale-105"
+          className="relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] hover:bg-[#0284e4] text-white py-3 px-8 rounded-md font-semibold group transform hover:scale-105"
         >
           <span className="relative z-10">Показать больше</span>
           <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
@@ -83,7 +88,7 @@ const Routine = () => {
       {/* Client Results Section */}
       <div className="mt-20 pt-16">
         <header className="max-w-screen-xl mx-auto text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text">
+          <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans text-[#1DA6E2]">
             Результаты наших пациентов
           </h2>
           <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
@@ -96,39 +101,44 @@ const Routine = () => {
           <Slider {...sliderSettings}>
             {clientResults.map((item) => (
               <div key={item.id} className="px-2">
-                <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 bg-white">
-                  {/* Before/After Images */}
-                  <div className="relative h-80 sm:h-96 md:h-[28rem]">
-                    <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden">
-                      <img
-                        src={item.before}
-                        alt={`До лечения - ${item.title}`}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2 left-2 bg-black/40 text-white px-2 py-1 rounded text-xs font-semibold">
-                        ДО
+                {/* SAME wrapper heights as routine items so all slides match */}
+                <div className="h-56 sm:h-64 md:h-72 lg:h-80 flex">
+                  <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 bg-white w-full flex flex-col h-full">
+                    {/* Before/After Images - keep image area proportional */}
+                    <div className="relative flex-shrink-0 h-1/2 overflow-hidden">
+                      <div className="absolute top-0 left-0 w-full h-full">
+                        <img
+                          src={item.before}
+                          alt={`До лечения - ${item.title}`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-2 left-2 bg-[#1DA6E2]/60 text-white px-2 py-1 rounded text-xs font-semibold">
+                          ДО
+                        </div>
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 w-full h-1/2 overflow-hidden">
-                      <img
-                        src={item.after}
-                        alt={`После лечения - ${item.title}`}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2 left-2 bg-black/40 text-white px-2 py-1 rounded text-xs font-semibold">
-                        ПОСЛЕ
-                      </div>
-                    </div>
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white transform -translate-y-1/2 z-10"></div>
-                  </div>
 
-                  {/* Always Visible Text */}
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-                    <div className="flex justify-between text-xs text-gray-500">
-                      <span>Возраст: {item.patientAge}</span>
-                      <span>Лечение: {item.treatmentDuration}</span>
+                    <div className="relative flex-shrink-0 h-1/2 overflow-hidden">
+                      <div className="absolute top-0 left-0 w-full h-full">
+                        <img
+                          src={item.after}
+                          alt={`После лечения - ${item.title}`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-2 left-2 bg-[#1DA6E2]/60 text-white px-2 py-1 rounded text-xs font-semibold">
+                          ПОСЛЕ
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Text area - fixed space at bottom */}
+                    <div className="p-4 flex-none">
+                      <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
+                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">{item.description}</p>
+                      <div className="flex justify-between text-xs text-gray-500">
+                        <span>Возраст: {item.patientAge}</span>
+                        <span>Лечение: {item.treatmentDuration}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -141,13 +151,28 @@ const Routine = () => {
         <div className="mt-10 sm:mt-16 flex justify-center">
           <button
             onClick={handleShowMoreResults}
-            className="relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer bg-gradient-to-r from-cyan-200 to-cyan-500 text-white py-3 px-8 rounded-full font-semibold group transform hover:scale-105"
+            className="relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] hover:bg-[#0284e4] text-white py-3 px-8 rounded-md font-semibold group transform hover:scale-105"
           >
             <span className="relative z-10">Смотреть все результаты</span>
             <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
           </button>
         </div>
       </div>
+
+      {/* Dots Color */}
+      <style>{`
+        .slick-dots li button:before {
+          color: #1DA6E2 !important;
+          opacity: 0.3;
+        }
+        .slick-dots li.slick-active button:before {
+          color: #1DA6E2 !important;
+          opacity: 1;
+        }
+        /* line-clamp fallback if not using the plugin */
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+      `}</style>
     </section>
   )
 }

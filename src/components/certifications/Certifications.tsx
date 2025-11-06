@@ -35,10 +35,7 @@ const Certifications = () => {
   )
 
   return (
-    <section
-      id="certifications"
-      className="w-full bg-gradient-to-r from-white to-cyan-200 flex flex-col items-center  px-4 sm:px-6"
-    >
+    <section id="certifications" className="w-full  flex flex-col items-center  px-4 sm:px-6">
       <div className="w-full max-w-screen-xl">
         <Slider {...sliderSettings}>
           {certifications.map((cert) => (

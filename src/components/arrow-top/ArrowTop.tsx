@@ -18,7 +18,7 @@ const ArrowTop: React.FC = () => {
     <div
       onClick={scrollToTop}
       className={`
-        fixed bottom-32 right-5 z-38 cursor-pointer 
+        fixed bottom-32 rounded-md right-5 z-38 cursor-pointer 
         transition-all duration-500 ease-in-out 
          p-3 shadow-lg backdrop-blur-md 
         bg-[#1DA6E2] hover:bg-[#1DA6E2] hover:scale-110 hover:shadow-[#1DA6E2]

@@ -108,16 +108,14 @@ const Navbar = () => {
   const linkStyle = (isActive: boolean) =>
     clsx(
       "font-mono cursor-pointer relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:transition-all after:duration-300 hover:after:w-full",
-      isActive
-        ? 'bg-gradient-to-r from-cyan-500 via-cyan-700 to-slate-900 text-transparent bg-clip-text after:bg-gradient-to-r after:from-cyan-500 after:via-cyan-700 after:to-slate-900'
-        : 'text-white after:bg-white',
+      isActive ? 'text-[#212121] after:bg-[#212121]' : 'text-white after:bg-white',
     )
 
   const isNavActive = forceActive || active
 
   const getNavText = (title: string) => {
     const navTexts: { [key: string]: string } = {
-      About: 'ОБО МНЕ',
+      About: 'О НАС',
       Experience: 'ОПЫТ',
       Projects: 'ПРОЕКТЫ',
       Consultation: 'ЗАПИСЬ',
@@ -130,8 +128,10 @@ const Navbar = () => {
     <nav
       aria-label="Main navigation"
       className={clsx(
-        'flex justify-between items-center px-6 md:px-20 py-3 fixed top-0 left-0 right-0 z-50 transition-colors duration-300',
-        isNavActive ? 'bg-gradient-to-r from-white to-cyan-200 shadow-md' : 'bg-transparent',
+        'flex justify-between items-center h-16 px-6 md:px-20 fixed top-10 left-0 right-0 z-40 transition-colors duration-300 border-b',
+        isNavActive
+          ? 'bg-white/95 backdrop-blur border-slate-200 shadow-sm'
+          : 'bg-transparent border-transparent',
       )}
     >
       {isHomePage ? (
@@ -141,19 +141,6 @@ const Navbar = () => {
           className="cursor-pointer flex items-center gap-2 group"
           aria-label="Homepage"
         >
-          {/* <img
-            src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754223427/vahan/download_v2dtpq.svg"
-            alt="Vitadent Logo"
-            width={50}
-            height={50}
-            className={clsx('transition-transform duration-300 group-hover:rotate-6')}
-          />
-          <span
-            style={{ fontFamily: '"Parisienne", cursive' }}
-            className="text-2xl font-bold bg-gradient-to-r from-[#2af1f4] via-[#0284e4] to-[#2af1f4] text-transparent bg-clip-text transition-all duration-300"
-          >
-            Вита Дент
-          </span> */}
           <img
             src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762437338/vita-logo_osqg0g.svg"
             alt="Vitadent Logo"
@@ -174,18 +161,11 @@ const Navbar = () => {
           aria-label="Homepage"
         >
           <img
-            src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754223427/vahan/download_v2dtpq.svg"
+            src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762437338/vita-logo_osqg0g.svg"
             alt="Vitadent Logo"
-            width={50}
-            height={50}
-            className={clsx('transition-transform duration-300 group-hover:rotate-6')}
+            width={240}
+            height={100}
           />
-          <span
-            style={{ fontFamily: '"Parisienne", cursive' }}
-            className="text-2xl font-bold bg-gradient-to-r from-[#2af1f4] via-[#0284e4] to-[#2af1f4] text-transparent bg-clip-text transition-all duration-300"
-          >
-            Vitadent
-          </span>
         </button>
       )}
 
@@ -199,7 +179,7 @@ const Navbar = () => {
                   to={href === 'contact' ? '#' : href}
                   duration={500}
                   smooth={true}
-                  offset={50}
+                  offset={href === 'contacts' ? -80 : 50}
                   className={linkStyle(isNavActive)}
                   role="menuitem"
                 >
@@ -217,6 +197,32 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* CTA button on the right */}
+      <div className="hidden md:block">
+        {isHomePage ? (
+          <ScrollLink
+            to="contacts"
+            duration={500}
+            smooth={true}
+            offset={-80}
+            className="cursor-pointer"
+          >
+            <span className="inline-block bg-[#1DA6E2] hover:opacity-90 rounded-md transition-colors text-white font-semibold py-2 px-4 shadow-sm">
+              Записаться на прием
+            </span>
+          </ScrollLink>
+        ) : (
+          <button
+            onClick={() => {
+              handleNavigation('contacts', 'Consultation')
+            }}
+            className="inline-block rounded-md bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-md shadow-sm"
+          >
+            Записаться на прием
+          </button>
+        )}
       </div>
 
       <button
@@ -260,7 +266,7 @@ const Navbar = () => {
                       to={href}
                       duration={500}
                       smooth={true}
-                      offset={50}
+                      offset={href === 'contacts' ? -80 : 50}
                       onClick={() => {
                         toggleMenu()
                         if (title === 'Contact') setOpen(true)

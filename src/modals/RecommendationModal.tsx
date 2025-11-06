@@ -53,7 +53,7 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
       'Recommendation cannot be longer than 300 characters.':
         'Отзыв не может быть длиннее 300 символов.',
       'Full name cannot be longer than 40 characters.':
-        'Полное имя не может быть длиннее 40 символов.',
+        'Полное имя не может быть длиннее 40 символо��.',
     }
     return errorTexts[message] || message
   }
@@ -130,10 +130,10 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
     >
       <div
         ref={modalRef}
-        className="bg-white rounded-3xl shadow-2xl w-full max-w-xl p-8 animate-fade-in"
+        className="bg-white rounded-lg shadow-2xl w-full max-w-xl p-8 animate-fade-in"
       >
         <span className="flex justify-center w-full">
-          <h2 className="text-2xl inline-block text-center font-bold mb-8 font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text">
+          <h2 className="text-2xl inline-block text-center font-bold mb-8 font-sans text-[#1DA6E2]">
             Оставить отзыв
           </h2>
         </span>
@@ -142,10 +142,10 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
           className="space-y-5 text-gray-700 text-sm md:text-base"
         >
           <div>
-            <label className="block mb-1 font-medium">Полное имя</label>
+            <label className="block mb-1 font-medium text-gray-700">Полное имя</label>
             <input
               {...register('fullName')}
-              className="w-full rounded-2xl px-4 py-2 border border-gray-300 shadow-inner focus:outline-none focus:ring-1 focus:ring-cyan-300 transition-all duration-300 placeholder:italic placeholder:text-gray-400"
+              className="w-full rounded-lg px-4 py-2 border border-gray-300 shadow-inner focus:outline-none focus:ring-2 focus:ring-[#1DA6E2] focus:border-[#1DA6E2] transition-all duration-300 placeholder:italic placeholder:text-gray-400"
             />
             {errors.fullName && (
               <p className="text-red-500 mt-1">{getErrorText(errors.fullName.message!)}</p>
@@ -153,17 +153,17 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label className="block mb-1 font-medium">Текст отзыва</label>
+            <label className="block mb-1 font-medium text-gray-700">Текст отзыва</label>
             <textarea
               {...register('recommendation')}
-              className="w-full h-28 resize-none rounded-2xl px-4 py-2 border border-gray-300 shadow-inner focus:outline-none focus:ring-1 focus:ring-cyan-300 transition-all duration-300 placeholder:italic placeholder:text-gray-400"
+              className="w-full h-28 resize-none rounded-lg px-4 py-2 border border-gray-300 shadow-inner focus:outline-none focus:ring-2 focus:ring-[#1DA6E2] focus:border-[#1DA6E2] transition-all duration-300 placeholder:italic placeholder:text-gray-400"
             />
             {errors.recommendation && (
               <p className="text-red-500 mt-1">{getErrorText(errors.recommendation.message!)}</p>
             )}
           </div>
           <div>
-            <label className="block mb-1 font-medium">Оценка</label>
+            <label className="block mb-1 font-medium text-gray-700">Оценка</label>
             <Controller
               name="stars"
               control={control}
@@ -187,10 +187,10 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label className="block mb-1 font-medium">Изображение</label>
+            <label className="block mb-1 font-medium text-gray-700">Изображение</label>
             <div className="flex items-center gap-3">
-              <label className="flex items-center gap-2 px-4 py-2 bg-cyan-100 text-cyan-700 font-semibold rounded-xl cursor-pointer hover:bg-cyan-200 transition">
-                <FaUpload className="text-cyan-600" />
+              <label className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                <FaUpload className="text-[#1DA6E2]" />
                 Загрузить
                 <input type="file" accept="image/*" onChange={uploadImage} className="hidden" />
               </label>
@@ -220,20 +220,18 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
             <button
               type="submit"
               disabled={isLoading}
-              className="relative overflow-hidden shadow-lg hover:shadow-2xl duration-300 w-full text-center flex justify-center items-center gap-2 cursor-pointer bg-gradient-to-r from-cyan-200 to-cyan-500 text-white py-3 px-4 rounded-4xl font-semibold transition-all group disabled:opacity-50"
+              className="relative overflow-hidden shadow-md hover:shadow-lg duration-300 w-full text-center flex justify-center items-center gap-2 cursor-pointer bg-[#1DA6E2] hover:bg-[#0284e4] text-white py-3 px-4 rounded-lg font-semibold transition-all group disabled:opacity-50"
             >
               <span className="relative z-10">
                 {isLoading ? <AiOutlineLoading3Quarters className="animate-spin" /> : 'Отправить'}
               </span>
-              <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="relative overflow-hidden shadow-lg hover:shadow-2xl duration-300 w-full cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 px-4 rounded-4xl font-semibold transition-all group"
+              className="relative overflow-hidden shadow-md hover:shadow-lg duration-300 w-full cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-lg font-semibold transition-all group"
             >
               <span className="relative z-10">Отмена</span>
-              <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
             </button>
           </div>
         </form>

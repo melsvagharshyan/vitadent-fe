@@ -18,11 +18,10 @@ const ClientResultsPage = () => {
 
   const handleConsultationClick = () => {
     navigate('/')
-    // Use setTimeout to ensure navigation completes before scrolling
     setTimeout(() => {
-      const consultationSection = document.getElementById('consultation')
-      if (consultationSection) {
-        consultationSection.scrollIntoView({
+      const contactsSection = document.getElementById('contacts')
+      if (contactsSection) {
+        contactsSection.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         })
@@ -32,13 +31,13 @@ const ClientResultsPage = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen pt-30 bg-gradient-to-br from-white via-cyan-50 to-cyan-100 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen pt-30 bg-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-screen-xl mx-auto">
           {/* Header with back button */}
           <div className="flex items-center mb-8">
             <button
               onClick={handleBack}
-              className="flex cursor-pointer items-center gap-2 text-cyan-600 hover:text-cyan-800 transition-colors duration-200"
+              className="flex cursor-pointer items-center gap-2 text-[#1DA6E2] hover:text-[#0284e4] transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Назад</span>
@@ -47,7 +46,7 @@ const ClientResultsPage = () => {
 
           {/* Page Title */}
           <header className="text-center mb-12">
-            <h1 className="text-3xl sm:text-5xl font-bold uppercase font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text mb-4">
+            <h1 className="text-3xl sm:text-5xl font-bold uppercase font-sans bg-gradient-to-r text-[#1DA6E2]  bg-clip-text mb-4">
               Результаты наших пациентов
             </h1>
             <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
@@ -56,8 +55,6 @@ const ClientResultsPage = () => {
             </p>
           </header>
 
-          {/* Videos moved to dedicated /videos page */}
-
           {/* Results Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {detailedClientResults.map((item) => (
@@ -65,45 +62,37 @@ const ClientResultsPage = () => {
                 key={item.id}
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
               >
-                {/* Before/After Images Container */}
                 <div className="relative h-80 sm:h-96">
-                  {/* Before Image */}
                   <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden">
                     <img
                       src={item.before}
                       alt={`До лечения - ${item.title}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute top-3 left-3 bg-black/40 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    <div className="absolute top-3 left-3 bg-[#1DA6E2]/40 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                       ДО
                     </div>
                   </div>
-                  {/* After Image */}
                   <div className="absolute bottom-0 left-0 w-full h-1/2 overflow-hidden">
                     <img
                       src={item.after}
                       alt={`После лечения - ${item.title}`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute top-3 left-3 bg-black/40 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    <div className="absolute top-3 left-3 bg-[#1DA6E2]/40 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                       ПОСЛЕ
                     </div>
                   </div>
-                  {/* Divider Line */}
                   <div className="absolute top-1/2 left-0 w-full h-1 bg-white transform -translate-y-1/2 z-10 shadow-md"></div>
-
-                  {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-cyan-700 transition-colors duration-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#1DA6E2] transition-colors duration-200">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
 
-                  {/* Patient Info */}
                   <div className="flex justify-between items-center pt-3 border-t border-gray-100">
                     <div className="text-xs text-gray-500">
                       <span className="font-semibold">Возраст:</span> {item.patientAge}
@@ -126,7 +115,7 @@ const ClientResultsPage = () => {
               </p>
               <button
                 onClick={handleConsultationClick}
-                className="relative cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-cyan-200 to-cyan-500 text-white py-3 px-8 rounded-full font-semibold group transform hover:scale-105"
+                className="relative cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-[#1DA6E2] to-[#0284e4] text-white py-3 px-8 rounded-md font-semibold group transform hover:scale-105"
               >
                 <span className="relative z-10">Записаться</span>
                 <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>

@@ -33,12 +33,14 @@ const Licenses = () => {
       dots: true,
       infinite: false,
       speed: 500,
-      slidesToShow: isMobile ? 1 : isTablet ? 2 : 2,
+      slidesToShow: isMobile ? 1 : isTablet ? 2 : 3,
       slidesToScroll: 1,
       arrows: false,
       appendDots: (dots: React.ReactNode) => (
         <div className="mt-3">
-          <ul className="flex justify-center gap-2" aria-label="Licenses navigation dots">{dots}</ul>
+          <ul className="flex justify-center gap-2" aria-label="Licenses navigation dots">
+            {dots}
+          </ul>
         </div>
       ),
     }),
@@ -46,20 +48,8 @@ const Licenses = () => {
   )
 
   return (
-    <section className="w-full bg-gradient-to-r from-white to-cyan-200 py-10" aria-labelledby="licenses-title">
+    <section className="w-full  py-10" aria-labelledby="licenses-title">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-8">
-          <h2
-            id="licenses-title"
-            className="text-2xl sm:text-3xl font-bold uppercase font-sans bg-gradient-to-r from-cyan-500 via-cyan-950 to-cyan-500 text-transparent bg-clip-text"
-          >
-            Лицензии и разрешительные документы
-          </h2>
-          <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-            Подтверждение квалификации и права на осуществление стоматологической деятельности.
-          </p>
-        </header>
-
         <Slider {...sliderSettings}>
           {certificationsLarge.map(({ id, image }) => (
             <div key={id} className="px-2">
@@ -86,7 +76,11 @@ const Licenses = () => {
             role="dialog"
             aria-modal="true"
           >
-            <img src={active} alt="Лицензия" className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl" />
+            <img
+              src={active}
+              alt="Лицензия"
+              className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+            />
           </div>
         )}
       </div>
@@ -95,5 +89,3 @@ const Licenses = () => {
 }
 
 export default Licenses
-
-
