@@ -1,37 +1,33 @@
 // Our Working Process images
-export const routineImages = [
+export const specialists = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661285/vahan/2025-08-08_06.49.24_keseuy.jpg',
-    title: 'Первичная консультация',
-    description: 'Детальный осмотр  и планирование лечения',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754586434/vahan/2025-08-07_10.06.37_mxr8hm.jpg',
+    title: 'Варданян Ваган Араикович',
+    description:
+      'Семейный врач-стоматолог общей практики, выполняет эстетически сложные реставрации зубов, лечение, протезирование и удаление всех видов.',
   },
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661286/vahan/2025-08-08_06.49.35_xoke3p.jpg',
-    title: 'Диагностика',
-    description: 'Использование современного диагностического оборудования',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762519050/2025-11-07_16.36.42_tqqavv.jpg',
+    title: 'Драчкова Ирина Станиславовна',
+    description:
+      'Врач стоматолог высшей категории, специализируется на высококачественном лечении зубов и десен, хирургии',
   },
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661285/vahan/2025-08-08_06.49.13_n8zgny.jpg',
-    title: 'Лечебные процедуры',
-    description: 'Профессиональное лечение',
-  },
-  {
-    id: 4,
-    image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754665214/vahan/istockphoto-1284827806-612x612_jxyufk.jpg',
-    title: 'Завершение дня',
-    description: 'Обработка и стерилизация оборудования после приема',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762519051/2025-11-07_16.36.47_md8fsb.jpg',
+    title: 'Зоткин Виталий Сергеевич',
+    description:
+      'Врач стоматолог 1й категории, специализируется на высоко эстетичных реставрациях зубов, лечение и протезирование всех видов',
   },
 ]
 
 // Extended images for the detailed working process page
-export const detailedRoutineImages = [...routineImages]
+export const specialistImages = [...specialists]
 
 // Client Before/After Results (без имплантации и ортодонтии)
 export const clientResults = [

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
-import { detailedRoutineImages } from '~/components/routine/utils/constants'
 import Layout from '~/components/layout/Layout'
 import { useEffect } from 'react'
+import { specialistImages } from '~/components/routine/utils/constants'
 
 const RoutinePage = () => {
   const navigate = useNavigate()
@@ -34,35 +34,26 @@ const RoutinePage = () => {
           {/* Page Title */}
           <header className="text-center mb-12">
             <h1 className="text-3xl sm:text-5xl font-bold uppercase font-sans bg-gradient-to-r text-[#1DA6E2] bg-clip-text mb-4">
-              Наш рабочий процесс
+              Наши специалисты
             </h1>
             <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto">
-              Детальный обзор профессиональных стандартов и методик современной стоматологии. Каждый
-              этап работы соответствует международным протоколам для обеспечения высочайшего
-              качества лечения.
+              Профессиональные стоматологи клиники Вита Дент. Каждый врач обладает высокой
+              квалификацией и опытом в своей специализации.
             </p>
           </header>
 
-          {/* Images Grid */}
+          {/* Images Grid with blurred overlay */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {detailedRoutineImages.map((item) => (
+            {specialistImages.map((item) => (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 w-full flex h-80"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#1DA6E2] transition-colors duration-200">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                {/* Blurred info overlay */}
+                <div className="absolute bottom-0 left-0 w-full p-4 bg-black/30 backdrop-blur-xs text-white">
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-sm line-clamp-4">{item.description}</p>
                 </div>
               </div>
             ))}

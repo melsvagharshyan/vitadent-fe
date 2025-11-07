@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import { useMemo } from 'react'
 import Slider from 'react-slick'
-import { routineImages, clientResults } from './utils/constants'
+import { clientResults, specialistImages } from './utils/constants'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -18,7 +18,7 @@ const Routine = () => {
       speed: 500,
       slidesToShow: isMobile ? 1 : isTablet ? 2 : 3,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: isMobile ? true : false,
       autoplaySpeed: 3000,
       arrows: false,
       responsive: [
@@ -37,35 +37,26 @@ const Routine = () => {
       {/* Routine Header */}
       <header className="max-w-screen-xl mx-auto text-center mb-10 sm:mb-12">
         <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans text-[#1DA6E2]">
-          Наша рутина
+          НАШИ ПРОФЕССИОНАЛЫ
         </h2>
         <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
-          Заглянем за кулисы работы клиники Вита Дент
+          Профессионалы, заботящиеся о вашей улыбке
         </p>
       </header>
 
       {/* Routine Slider */}
       <div className="max-w-screen-xl mx-auto">
         <Slider {...sliderSettings}>
-          {routineImages.map((item) => (
-            // enforce equal slide height with responsive fixed wrapper
+          {specialistImages.map((item) => (
             <div key={item.id} className="px-2">
-              <div className="h-56 sm:h-64 md:h-72 lg:h-80 flex">
-                {/* card fills full height */}
-                <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 w-full flex flex-col h-full bg-white">
-                  <div className="w-full">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-                  </div>
+              <div className="h-80  lg:h-80 flex">
+                <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 w-full flex h-full">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
 
-                  {/* keep text area fixed behavior so card height is stable */}
-                  <div className="p-4 text-white flex-grow flex flex-col justify-end overflow-hidden">
-                    <h3 className="text-lg font-semibold mb-1 text-gray-900">{item.title}</h3>
-                    <p className="text-sm text-gray-600 line-clamp-3">{item.description}</p>
+                  {/* Blurred info overlay */}
+                  <div className="absolute bottom-0 left-0 w-full p-4 bg-black/30 backdrop-blur-xs text-white">
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <p className="text-sm line-clamp-4">{item.description}</p>
                   </div>
                 </div>
               </div>
