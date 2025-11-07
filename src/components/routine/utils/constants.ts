@@ -19,7 +19,7 @@ export const specialists = [
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762519051/2025-11-07_16.36.47_md8fsb.jpg',
+      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762522362/2025-11-07_17.32.05_puqcvf.jpg',
     title: 'Зоткин Виталий Сергеевич',
     description:
       'Врач стоматолог 1й категории, специализируется на высоко эстетичных реставрациях зубов, лечение и протезирование всех видов',

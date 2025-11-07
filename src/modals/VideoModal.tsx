@@ -27,21 +27,17 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
         if (!isMobileViewport || !videoRef.current) return
         const video = videoRef.current as any
         try {
-          try {
-            video.muted = false
-            video.volume = 1
-            video.currentTime = 0
-            await video.play()
-          } catch {}
+          video.muted = false
+          video.volume = 1
+          video.currentTime = 0
+          await video.play()
           if (typeof video.webkitEnterFullscreen === 'function') {
             video.webkitEnterFullscreen()
             return
           }
           if (typeof video.requestFullscreen === 'function') {
             await video.requestFullscreen()
-            try {
-              await video.play()
-            } catch {}
+            await video.play().catch(() => {})
             return
           }
           if (
@@ -49,18 +45,14 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
             typeof video.webkitRequestFullscreen === 'function'
           ) {
             video.webkitRequestFullscreen()
-            try {
-              await video.play()
-            } catch {}
+            await video.play().catch(() => {})
           }
         } catch {}
       }
       setTimeout(tryEnterFullscreen, 50)
     } else {
-      try {
-        videoRef.current?.pause()
-        if (videoRef.current) videoRef.current.currentTime = 0
-      } catch {}
+      videoRef.current?.pause()
+      if (videoRef.current) videoRef.current.currentTime = 0
       document.body.style.overflow = originalOverflow
       document.body.style.paddingRight = originalPaddingRight
     }
@@ -122,7 +114,7 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
 
   return ReactDOM.createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4"
       onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
@@ -130,7 +122,7 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
     >
       <div
         ref={modalRef}
-        className="relative bg-black rounded-3xl shadow-2xl w-full max-w-4xl overflow-hidden animate-fade-in"
+        className="relative bg-black rounded-3xl shadow-2xl w-full max-w-4xl overflow-hidden animate-fade-in z-[10000]"
       >
         <button
           onClick={async () => {
@@ -138,13 +130,13 @@ export const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, src, title })
             onClose()
           }}
           aria-label="Закрыть"
-          className="absolute top-3 right-3 z-10 bg-[#1DA6E2]/90 hover:bg-[#0284e4] text-white rounded-full p-2 cursor-pointer shadow"
+          className="absolute top-3 right-3 z-[10001] bg-[#1DA6E2]/90 hover:bg-[#0284e4] text-white rounded-full p-2 cursor-pointer shadow"
         >
           <IoClose size={20} />
         </button>
 
         {title && (
-          <div className="px-4 py-3 text-white bg-[#1DA6E2]/60 absolute top-0 left-0 right-0 pointer-events-none">
+          <div className="px-4 py-3 text-white bg-[#1DA6E2]/60 absolute top-0 left-0 right-0 pointer-events-none z-[10001]">
             <h3 className="text-sm sm:text-base md:text-lg font-semibold drop-shadow">{title}</h3>
           </div>
         )}
