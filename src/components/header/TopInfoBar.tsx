@@ -4,6 +4,7 @@ const TopInfoBar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 h-10 bg-slate-800 text-white text-xs">
       <div className="max-w-screen-xl h-full mx-auto px-4 flex items-center justify-between gap-4">
+        {/* Left side: address & hours (hidden on mobile) */}
         <div className="hidden sm:flex items-center gap-6">
           <div className="flex items-center gap-2 whitespace-nowrap">
             <FiMapPin className="opacity-80" />
@@ -14,7 +15,9 @@ const TopInfoBar = () => {
             <span>Пн - Сб: 10:00 - 19:00</span>
           </div>
         </div>
-        <div className="flex items-center gap-6 ml-auto">
+
+        {/* Right side: phone & email */}
+        <div className="flex-1 flex items-center justify-center gap-6 sm:flex-none sm:justify-end">
           <a
             href="tel:+37411559609"
             className="flex items-center gap-2 whitespace-nowrap hover:opacity-90"
@@ -24,7 +27,7 @@ const TopInfoBar = () => {
           </a>
           <a
             href="mailto:vita.dent71@mail.ru"
-            className="hidden sm:flex items-center gap-2 whitespace-nowrap hover:opacity-90"
+            className="flex items-center gap-2 whitespace-nowrap hover:opacity-90"
           >
             <FiMail className="opacity-80" />
             <span>vita.dent71@mail.ru</span>

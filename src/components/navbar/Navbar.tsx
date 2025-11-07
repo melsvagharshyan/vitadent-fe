@@ -62,7 +62,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
       <nav
         className={clsx(
           'fixed top-10 left-0 right-0 z-[9999] h-16 px-6 md:px-20 flex justify-between items-center transition-colors duration-300 border-b',
@@ -71,12 +70,10 @@ const Navbar = () => {
             : 'bg-transparent border-transparent',
         )}
       >
-        {/* Logo */}
         <div className="flex items-center">
           <button
             onClick={() => {
               navigate('/')
-              // Scroll to top after navigation
               setTimeout(() => {
                 window.scrollTo(0, 0)
               }, 100)
@@ -128,7 +125,12 @@ const Navbar = () => {
             >
               <button
                 onClick={toggleMenu}
-                className="self-end mb-6 text-gray-600 text-xl font-semibold hover:text-gray-900 transition-colors"
+                className="self-end mb-6 text-gray-600 hover:text-gray-900 transition-colors"
+                style={{
+                  fontSize: '2rem',
+                  lineHeight: 1,
+                  padding: '0.25rem 0.5rem',
+                }}
               >
                 ✕
               </button>
@@ -143,14 +145,14 @@ const Navbar = () => {
                         duration={500}
                         offset={href === 'contacts' ? -80 : 50}
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-gray-800 font-semibold text-lg hover:text-sky-500 transition-colors cursor-pointer"
+                        className="text-[#1DA6E2] font-semibold text-lg hover:text-sky-500 transition-colors cursor-pointer"
                       >
                         {getNavText(title)}
                       </ScrollLink>
                     ) : (
                       <button
                         onClick={() => handleNavigation(href, title)}
-                        className="text-gray-800 font-semibold text-lg hover:text-sky-500 transition-colors"
+                        className=" font-semibold text-lg hover:text-sky-500 transition-colors"
                       >
                         {getNavText(title)}
                       </button>
