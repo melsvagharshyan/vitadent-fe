@@ -4,12 +4,12 @@ import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { FaStar, FaUpload } from 'react-icons/fa'
+import { IoClose } from 'react-icons/io5'
 import { useCreateRecommendationsMutation } from '~/app/recommendations/recommendations.api'
 import { Base64 } from '~/hooks/Base64'
 import { recommendationFormSchema, RecommendationFormSchema } from './utils/validations'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { IoClose } from 'react-icons/io5'
 
 interface Props {
   isOpen: boolean
@@ -52,7 +52,7 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
       'Recommendation cannot be longer than 300 characters.':
         'Отзыв не может быть длиннее 300 символов.',
       'Full name cannot be longer than 40 characters.':
-        'Полное имя не может быть длиннее 40 символо��.',
+        'Полное имя не может быть длиннее 40 символов.',
     }
     return errorTexts[message] || message
   }
@@ -60,33 +60,20 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
   const onSubmit = (data: RecommendationFormSchema) => {
     createRecommendation({ ...data, image })
       .unwrap()
-      .then(async () => {
+      .then(() => {
         toast.success('Отзыв успешно отправлен!', {
           position: 'top-center',
           autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: 'colored',
-          style: {
-            background: '#00b8db',
-          },
+          style: { background: '#00b8db' },
         })
         reset()
         onClose()
       })
-      .catch((error) => {
-        console.error('Error submitting form', error)
+      .catch(() => {
         toast.error('Что-то пошло не так. Пожалуйста, попробуйте еще раз.', {
           position: 'top-center',
           autoClose: 1500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: 'colored',
         })
       })
@@ -122,18 +109,14 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
 
   return ReactDOM.createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 px-4"
       onClick={handleOverlayClick}
     >
       <div
         ref={modalRef}
-        className="bg-white rounded-lg shadow-2xl w-full max-w-xl p-8 animate-fade-in"
+        className="bg-white rounded-lg shadow-2xl w-full max-w-xl p-8 animate-fade-in z-[10000]"
       >
-        <span className="flex justify-center w-full">
-          <h2 className="text-2xl inline-block text-center font-bold mb-8 font-sans text-[#1DA6E2]">
-            Оставить отзыв
-          </h2>
-        </span>
+        <h2 className="text-2xl text-center font-bold mb-8 text-[#1DA6E2]">Оставить отзыв</h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-5 text-gray-700 text-sm md:text-base"
@@ -159,6 +142,7 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
               <p className="text-red-500 mt-1">{getErrorText(errors.recommendation.message!)}</p>
             )}
           </div>
+
           <div>
             <label className="block mb-1 font-medium text-gray-700">Оценка</label>
             <Controller
@@ -202,11 +186,9 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
                     type="button"
                     onClick={() => setImage('')}
                     aria-label="Remove image"
-                    className="p-0 m-0 cursor-pointer"
+                    className="absolute -top-2 -right-2 bg-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.4)] p-1 flex items-center justify-center"
                   >
-                    <div className="bg-white absolute -top-2 -right-2 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.4)] p-1 flex items-center justify-center">
-                      <IoClose size={17} className="text-gray-600" />
-                    </div>
+                    <IoClose size={17} className="text-gray-600" />
                   </button>
                 </div>
               )}
