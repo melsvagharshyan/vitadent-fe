@@ -1,106 +1,121 @@
 import { motion } from 'framer-motion'
-import { FaStar, FaQuoteLeft } from 'react-icons/fa'
+import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import Slider from 'react-slick'
+import { useMemo, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { useMemo, useState } from 'react'
-import { RecommendationModal } from '~/modals/RecommendationModal'
 import { useGetRecommendationsQuery } from '~/app/recommendations/recommendations.api'
+import { RecommendationModal } from '~/modals/RecommendationModal'
+import './recommendations.css'
 
 const defaultAvatar =
   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1746967371/orig_sxg7yl.svg'
 
 const Recommendations = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
   const { data: recommendations } = useGetRecommendationsQuery()
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const sliderRef = useRef<Slider | null>(null)
+
+  const isMobile = useMediaQuery({ query: '(max-width: 640px)' })
 
   const sliderSettings = useMemo(
     () => ({
       infinite: true,
       speed: 500,
-      slidesToShow: isMobile ? 1 : 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3000,
-      dots: true,
+      autoplaySpeed: 4500,
       arrows: false,
+      dots: false,
+      centerMode: true,
+      centerPadding: '0px',
+      adaptiveHeight: true,
+      variableWidth: false,
     }),
     [isMobile],
   )
 
   return (
     <section id="recommendations" className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
-      {/* ===== Header ===== */}
-      <header className="max-w-screen-xl mx-auto text-center mb-12">
+      {/* Header */}
+      <header className="max-w-screen-xl mx-auto text-center mb-10">
         <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans text-[#1DA6E2] tracking-wide">
           Отзывы пациентов
         </h2>
       </header>
 
-      {/* ===== Slider Section ===== */}
-      <div className="max-w-screen-xl mx-auto px-2 sm:px-4">
-        <Slider {...sliderSettings}>
+      {/* Slider wrapper with custom arrows */}
+      <div className="relative max-w-screen-xl mx-auto">
+        {/* Left Arrow */}
+        <button
+          aria-label="Предыдущий отзыв"
+          className="testimonial-arrow testimonial-arrow--left"
+          onClick={() => sliderRef.current?.slickPrev()}
+        >
+          <FaChevronLeft className="text-white" />
+        </button>
+        {/* Right Arrow */}
+        <button
+          aria-label="Следующий отзыв"
+          className="testimonial-arrow testimonial-arrow--right"
+          onClick={() => sliderRef.current?.slickNext()}
+        >
+          <FaChevronRight className="text-white" />
+        </button>
+
+        <Slider ref={sliderRef} {...sliderSettings}>
           {recommendations?.map((rec) => (
             <motion.article
               key={rec._id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="px-2 sm:px-3"
+              className="px-2 sm:px-4 flex justify-center"
             >
-              <div className="flex flex-col bg-white rounded-lg border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-[420px] sm:h-[460px]">
-                {/* --- Top Section: Avatar & Rating --- */}
-                <div className="relative bg-gradient-to-br from-gray-50 to-white p-4 sm:p-6 text-center flex-shrink-0">
-                  <div className="flex flex-col items-center">
-                    {/* Avatar + Quote Icon */}
-                    <div className="relative mb-3">
+              <div className="bg-[#2B354B] text-white rounded-xl shadow-xl border border-black/10 overflow-hidden max-w-[900px] w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto min-h-[180px] sm:min-h-[220px]">
+                <div className="flex flex-col md:flex-row items-center md:items-stretch gap-6 p-6 sm:p-8">
+                  {/* Avatar */}
+                  <div className="flex justify-center md:justify-start md:items-center">
+                    <div className="relative">
                       <img
                         src={rec.image?.url || defaultAvatar}
-                        alt={`Portrait of ${rec.fullName}`}
-                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white shadow-lg"
+                        alt={`Фото пациента ${rec.fullName}`}
+                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-white/10 shadow-md mx-auto md:mx-0"
                       />
-                      <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-gray-100 border-2 border-white rounded-full flex items-center justify-center">
+                      <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-white/10 rounded-full border border-white/20 flex items-center justify-center">
                         <FaQuoteLeft className="text-[#1DA6E2] text-sm" />
                       </div>
                     </div>
-
-                    {/* Name */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-700 mb-1">
-                      {rec.fullName}
-                    </h3>
-
-                    {/* Stars */}
-                    <div className="flex gap-1 mb-2">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <FaStar
-                          key={i}
-                          className={`w-4 h-4 sm:w-5 sm:h-5 ${
-                            i < rec?.stars ? 'text-yellow-400' : 'text-gray-300'
-                          }`}
-                        />
-                      ))}
-                    </div>
                   </div>
-                </div>
 
-                {/* --- Text Section --- */}
-                <div className="flex flex-col flex-grow px-5 sm:px-6 pb-5 sm:pb-6">
-                  <blockquote
-                    className="text-gray-700 text-sm sm:text-base leading-relaxed flex-grow flex items-center justify-center text-center overflow-hidden"
-                    style={{
-                      display: '-webkit-box',
-                      WebkitLineClamp: 5,
-                      WebkitBoxOrient: 'vertical',
-                    }}
-                  >
-                    “{rec.recommendation}”
-                  </blockquote>
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    {/* Name on top */}
+                    <div className="mb-3 w-full">
+                      <span className="text-base sm:text-lg font-semibold text-white/90 block">
+                        {rec.fullName}
+                      </span>
+                    </div>
 
-                  {/* Decorative Divider */}
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-center">
-                      <div className="h-1 w-16 bg-[#1DA6E2] rounded-full"></div>
+                    {/* Recommendation text */}
+                    <blockquote className="testimonial-quote text-sm sm:text-base leading-relaxed text-center md:text-left">
+                      “{rec.recommendation}”
+                    </blockquote>
+
+                    {/* Stars at bottom */}
+                    <div className="mt-4 flex items-center gap-1 justify-center md:justify-start">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <svg
+                          key={i}
+                          viewBox="0 0 20 20"
+                          fill={i < (rec?.stars || 0) ? '#FFD54A' : '#334155'}
+                          className="w-4 h-4 sm:w-5 sm:h-5"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.388-2.46a1 1 0 00-1.176 0l-3.388 2.46c-.784.57-1.838-.197-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.044 9.393c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69L9.05 2.927z" />
+                        </svg>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -110,39 +125,24 @@ const Recommendations = () => {
         </Slider>
       </div>
 
-      {/* ===== Button ===== */}
+      {/* Button */}
       <div className="mt-12 flex justify-center">
         <button
           onClick={() => setIsModalOpen(true)}
-          className="relative overflow-hidden bg-[#1DA6E2] hover:bg-[#0284e4] text-white font-semibold py-3 px-6 rounded-md flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition duration-300"
+          className="relative cursor-pointer overflow-hidden bg-[#1DA6E2] hover:bg-[#0284e4] text-white font-semibold py-3 px-6 rounded-md flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition duration-300"
         >
           <span className="relative z-10">Оставить отзыв</span>
         </button>
       </div>
 
-      {/* ===== Modal ===== */}
       {isModalOpen && (
         <RecommendationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       )}
 
-      {/* ===== Slick Custom Styles ===== */}
+      {/* Slick paddings for nicer spacing */}
       <style>{`
-        .slick-dots li button:before {
-          color: #1DA6E2 !important;
-          opacity: 0.3;
-        }
-        .slick-dots li.slick-active button:before {
-          color: #1DA6E2 !important;
-          opacity: 1;
-        }
-        .slick-slide > div {
-          padding: 0 8px;
-        }
-        @media (min-width: 640px) {
-          .slick-slide > div {
-            padding: 0 12px;
-          }
-        }
+        .slick-slide > div { padding: 0 8px; }
+        @media (min-width: 640px) { .slick-slide > div { padding: 0 12px; } }
       `}</style>
     </section>
   )
