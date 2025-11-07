@@ -37,7 +37,7 @@ const Routine = () => {
       {/* Routine Header */}
       <header className="max-w-screen-xl mx-auto text-center mb-10 sm:mb-12">
         <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans text-[#1DA6E2]">
-          НАШИ ПРОФЕССИОНАЛЫ
+          Наши специалисты
         </h2>
         <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
           Профессионалы, заботящиеся о вашей улыбке
