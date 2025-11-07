@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import Navbar from '../navbar/Navbar'
 import TopInfoBar from '../header/TopInfoBar'
 
 interface LayoutProps {
@@ -10,7 +9,6 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <TopInfoBar />
-      <Navbar />
       {children}
     </>
   )

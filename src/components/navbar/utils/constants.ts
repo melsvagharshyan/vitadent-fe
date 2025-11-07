@@ -1,7 +1,6 @@
 export const navLinks = [
   { title: 'About', href: 'about' },
-  // { title: 'Projects', href: 'projects' },
-  { title: 'Consultation', href: 'contacts' },
+  { title: 'Price', href: 'price' },
   { title: 'Рабочий процесс', href: 'routine' },
-  { title: 'Contact', href: 'contact' },
+  { title: 'Licenses', href: 'licenses' },
 ]

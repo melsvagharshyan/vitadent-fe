@@ -65,7 +65,7 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
           position: 'top-center',
           autoClose: 1500,
           theme: 'colored',
-          style: { background: '#00b8db' },
+          style: { background: '#1DA6E2' },
         })
         reset()
         onClose()

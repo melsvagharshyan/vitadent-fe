@@ -9,8 +9,8 @@ import Education from '~/components/Education/Education'
 import Routine from '~/components/routine/Routine'
 import VideoGallery from '~/components/video-gallery/VideoGallery'
 import { Link } from 'react-router-dom'
-import Licenses from '~/components/certifications/Licenses'
 import AddressMap from '~/components/address-map/AddressMap'
+import PricePage from '~/pages/price/Price'
 
 // Lazy load pages
 
@@ -28,8 +28,6 @@ export const appRoutes: RouteObject[] = [
       <>
         <Header />
         <About />
-        <Education />
-        <Licenses />
         <section className="w-full bg-white py-8">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <VideoGallery
@@ -89,6 +87,14 @@ export const appRoutes: RouteObject[] = [
   {
     path: '/client-results',
     element: <ClientResultsPage />,
+  },
+  {
+    path: '/licenses',
+    element: <Education />,
+  },
+  {
+    path: '/price',
+    element: <PricePage />,
   },
   {
     path: '*',

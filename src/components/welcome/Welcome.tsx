@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -52,34 +51,19 @@ const Welcome = () => {
       animate="visible"
       exit="exit"
       style={{
-        backgroundImage: `url(https://i.pinimg.com/1200x/f4/af/35/f4af3577e597f6bd89ac19d04e9cfd6d.jpg)`,
+        backgroundImage: `url(https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762511177/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg)`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
     >
       <motion.div className="flex items-center gap-3 mb-4" variants={textVariants}>
         <img
-          src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754223427/vahan/download_v2dtpq.svg"
+          src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762437338/vita-logo_osqg0g.svg"
           alt="Vitadent Logo"
-          width={50}
-          height={50}
-          className={clsx('transition-transform duration-300 group-hover:rotate-6')}
+          width={240}
+          height={100}
         />
-        <span
-          style={{ fontFamily: '"Parisienne", cursive' }}
-          className="text-2xl font-bold bg-gradient-to-r from-[#2af1f4] via-[#0284e4] to-[#2af1f4] text-transparent bg-clip-text transition-all duration-300"
-        >
-          Vitadent
-        </span>
       </motion.div>
-
-      <motion.p
-        className="uppercase tracking-widest mb-4 text-cyan-200 text-sm md:text-base font-semibold"
-        variants={textVariants}
-      >
-        Ваша улыбка — наша забота
-      </motion.p>
-
       <motion.h1
         className="text-5xl mb-60 md:text-7xl font-extrabold drop-shadow-lg"
         variants={textVariants}

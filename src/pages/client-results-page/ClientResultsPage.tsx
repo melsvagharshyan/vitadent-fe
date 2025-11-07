@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 import { detailedClientResults } from '~/components/routine/utils/constants'
 import Layout from '~/components/layout/Layout'
 import { useEffect } from 'react'
@@ -31,16 +31,16 @@ const ClientResultsPage = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen pt-30 bg-white py-8 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen pt-20 bg-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-screen-xl mx-auto">
           {/* Header with back button */}
-          <div className="flex items-center mb-8">
+          <div className="flex items-center mb-10">
             <button
               onClick={handleBack}
-              className="flex cursor-pointer items-center gap-2 text-[#1DA6E2] hover:text-[#0284e4] transition-colors duration-200"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-white bg-[#1DA6E2] hover:bg-[#1691c7] shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
             >
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-medium">Назад</span>
+              <ChevronLeft className="w-5 h-5" />
+              <span className="font-semibold tracking-wide">Назад</span>
             </button>
           </div>
 

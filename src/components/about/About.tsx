@@ -11,13 +11,14 @@ const About = () => {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  const ClinicImage = 'https://i.pinimg.com/1200x/0b/ca/77/0bca77a5910d18c3470d7c1353d82fd9.jpg'
+  const ClinicImage =
+    'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762511177/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg'
 
   return (
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="w-full flex justify-center bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden"
+      className="w-full flex justify-center bg-gradient-to-br from-slate-50 to-gray-200 overflow-hidden"
     >
       <div className="flex flex-col md:flex-row items-center justify-between pt-20 pb-24 px-6 md:px-12 max-w-7xl w-full gap-12">
         {/* Mobile Layout */}

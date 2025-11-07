@@ -60,7 +60,10 @@ const AddressMap = () => {
   )
 
   return (
-    <section className="w-full bg-white py-10" aria-labelledby="address-title">
+    <section
+      className="w-full bg-gradient-to-br from-slate-50 to-gray-200  py-10"
+      aria-labelledby="address-title"
+    >
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-8">
           <h2
