@@ -89,13 +89,15 @@ const Header = () => {
               variants={individualButtonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="group relative rounded-md overflow-visible shadow-md hover:shadow-lg duration-300 ease-in-out flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] hover:bg-sky-600 text-white py-3 px-8  font-semibold transition-all"
+              className="group relative rounded-md overflow-visible shadow-md hover:shadow-lg duration-300 ease-in-out flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] hover:bg-sky-600 text-white py-3 px-8 font-semibold transition-all"
             >
-              Записаться на прием
+              <span className="relative z-10 flex items-center gap-2">Записаться на прием</span>
+
+              {/* animated soft border pulse effect */}
+              <span className="absolute inset-0 rounded-md border border-sky-300 opacity-40 animate-softPing scale-110 translate-x-[-50%] translate-y-[-50%] left-1/2 top-1/2 w-full h-full"></span>
             </motion.button>
           </ScrollLink>
         </motion.div>
-
         <style>
           {`
             @keyframes softPing {
