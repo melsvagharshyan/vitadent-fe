@@ -10,7 +10,6 @@ import { recommendationFormSchema, RecommendationFormSchema } from './utils/vali
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { IoClose } from 'react-icons/io5'
-import { sendToBot } from '~/app/api'
 
 interface Props {
   isOpen: boolean
@@ -62,8 +61,6 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
     createRecommendation({ ...data, image })
       .unwrap()
       .then(async () => {
-        await sendToBot(data?.fullName)
-
         toast.success('Отзыв успешно отправлен!', {
           position: 'top-center',
           autoClose: 1500,
