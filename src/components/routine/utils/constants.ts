@@ -33,10 +33,8 @@ export const specialistImages = [...specialists]
 export const clientResults = [
   {
     id: 1,
-    before:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754668373/vahan/2025-08-08_08.52.08_uuihxy.jpg',
-    after:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754668379/vahan/2025-08-08_08.52.12_uvjt1h.jpg',
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762581717/IMG_5402_ev87fp.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762581717/IMG_5403_oqjd52.jpg',
     title: 'Протезирование',
     description: 'Профессиональная установка мостовидного протеза',
     patientAge: '32 года',
@@ -44,10 +42,8 @@ export const clientResults = [
   },
   {
     id: 2,
-    before:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754670811/vahan/2025-08-08_09.32.38_lr1muq.jpg',
-    after:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754670819/vahan/2025-08-08_09.32.45_kouq1y.jpg',
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762582135/IMG_5404_hefnhw.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762582135/IMG_5405_p8em2t.jpg',
     title: 'Установка виниров',
     description: 'Керамические виниры E-max',
     patientAge: '35 лет',
@@ -55,10 +51,8 @@ export const clientResults = [
   },
   {
     id: 3,
-    before:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754670963/vahan/2025-08-08_09.32.58_lmtsqd.jpg',
-    after:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754670967/vahan/2025-08-08_09.33.02_ln7jly.jpg',
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762582511/IMG_5409_vsmbzn.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762582511/IMG_5407_krvmtp.jpg',
     title: 'Реставрация зубов',
     description: 'Композитная реставрация',
     patientAge: '29 лет',
@@ -66,10 +60,44 @@ export const clientResults = [
   },
   {
     id: 4,
-    before:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754727131/vahan/2025-08-09_01.11.41_naozoz.jpg',
-    after:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754727135/vahan/2025-08-09_01.11.32_cm0bsh.jpg',
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762582681/IMG_5410_uq7fxo.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762582681/IMG_5408_fj9kot.jpg',
+    title: 'Отбеливание зубов',
+    description: 'Композитная реставрация',
+    patientAge: '25 лет',
+    treatmentDuration: '1 процедура',
+  },
+  {
+    id: 5,
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762586873/IMG_5412_2_ieesoo.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762586874/IMG_5406_2_w8j8ks.jpg',
+    title: 'Отбеливание зубов',
+    description: 'Композитная реставрация',
+    patientAge: '25 лет',
+    treatmentDuration: '1 процедура',
+  },
+  {
+    id: 6,
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762587190/IMG_5416_ia9f7w.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762587190/IMG_5415_vtuvor.jpg',
+    title: 'Отбеливание зубов',
+    description: 'Композитная реставрация',
+    patientAge: '25 лет',
+    treatmentDuration: '1 процедура',
+  },
+  {
+    id: 7,
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762587322/IMG_5417_zpmf3a.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762587322/IMG_5414_p8w9ez.jpg',
+    title: 'Отбеливание зубов',
+    description: 'Композитная реставрация',
+    patientAge: '25 лет',
+    treatmentDuration: '1 процедура',
+  },
+  {
+    id: 8,
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762587454/IMG_5418_yphpwu.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762587454/IMG_5413_pjdt5p.jpg',
     title: 'Отбеливание зубов',
     description: 'Композитная реставрация',
     patientAge: '25 лет',

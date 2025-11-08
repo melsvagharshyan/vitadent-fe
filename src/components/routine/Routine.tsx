@@ -33,7 +33,10 @@ const Routine = () => {
   const handleShowMoreResults = () => navigate('/client-results')
 
   return (
-    <section id="routine" className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section
+      id="routine"
+      className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-gray-200"
+    >
       {/* Routine Header */}
       <header className="max-w-screen-xl mx-auto text-center mb-10 sm:mb-12">
         <h2 className="text-2xl sm:text-4xl font-bold uppercase font-sans text-[#1DA6E2]">

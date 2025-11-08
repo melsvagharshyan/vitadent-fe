@@ -86,7 +86,7 @@ const ClientResultsPage = () => {
                   <div className="absolute top-1/2 left-0 w-full h-1 bg-white transform -translate-y-1/2 z-10 shadow-md"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-
+                {/* 
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#1DA6E2] transition-colors duration-200">
                     {item.title}
@@ -101,7 +101,7 @@ const ClientResultsPage = () => {
                       <span className="font-semibold">Срок:</span> {item.treatmentDuration}
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

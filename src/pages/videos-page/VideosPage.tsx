@@ -57,6 +57,34 @@ const VideosPage = () => {
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
               },
+              {
+                id: 'v3',
+                url: 'https://res.cloudinary.com/dxfqf6fgv/video/upload/v1762583284/professionalnaia-gigiena-polosti-rta-1_E4tO295b_mdqalc.mov',
+                title: 'Профессиональная работа — Видео 1',
+                thumbnail:
+                  'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
+              },
+              {
+                id: 'v4',
+                url: 'https://res.cloudinary.com/dxfqf6fgv/video/upload/v1762585172/Why_regular_check-ups_with_a_Dentist_matters__emj0lc.mp4',
+                title: 'Профессиональная работа — Видео 1',
+                thumbnail:
+                  'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
+              },
+              {
+                id: 'v5',
+                url: 'https://res.cloudinary.com/dxfqf6fgv/video/upload/v1762585479/Pinterest_video_158751955610717267_puimh0.mp4',
+                title: 'Профессиональная работа — Видео 1',
+                thumbnail:
+                  'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
+              },
+              {
+                id: 'v6',
+                url: 'https://res.cloudinary.com/dxfqf6fgv/video/upload/v1762585989/a9e84aa5c0cd466fa7a950b2f0befc66_t1_rcdoef.mp4',
+                title: 'Профессиональная работа — Видео 1',
+                thumbnail:
+                  'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
+              },
             ]}
           />
         </div>
