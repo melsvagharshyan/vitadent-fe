@@ -28,7 +28,7 @@ export const appRoutes: RouteObject[] = [
       <>
         <Header />
         <About />
-        <section className="w-full bg-white py-8">
+        <section className="w-full bg-white py-8" id="routine">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <VideoGallery
               heading="Видеопортфолио нашей практики"

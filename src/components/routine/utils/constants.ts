@@ -103,6 +103,15 @@ export const clientResults = [
     patientAge: '25 лет',
     treatmentDuration: '1 процедура',
   },
+  {
+    id: 9,
+    before: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762677423/IMG_5458_ouz7vr.jpg',
+    after: 'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762677423/IMG_5459_rmwtol.jpg',
+    title: 'Отбеливание зубов',
+    description: 'Композитная реставрация',
+    patientAge: '25 лет',
+    treatmentDuration: '1 процедура',
+  },
 ]
 
 // Extended client results for detailed page
