@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-gray-700 text-base md:text-lg font-medium">
-                  Тульская область
+                  Тульская область, город Новомосковск
                 </span>
                 <span className="text-gray-500 text-sm mt-1">Трудовые резервы 25</span>
               </div>
