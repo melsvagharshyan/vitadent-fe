@@ -121,16 +121,14 @@ const Routine = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
 
-                    {/* Text area - fixed space at bottom */}
-                    <div className="p-4 flex-none">
-                      <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
-                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">{item.description}</p>
-                      <div className="flex justify-between text-xs text-gray-500">
-                        <span>Возраст: {item.patientAge}</span>
-                        <span>Лечение: {item.treatmentDuration}</span>
-                      </div>
-                    </div>
+                {/* Bottom Content (Description) */}
+                <div className="p-6 bg-white rounded-b-xl shadow-md mt-2">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.description}</p>
+                  <div className="flex justify-between items-center pt-3 border-t border-gray-100">
+                    {/* optional footer content */}
                   </div>
                 </div>
               </div>
