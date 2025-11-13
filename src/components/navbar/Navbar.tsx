@@ -39,6 +39,12 @@ const Navbar = () => {
       return
     }
 
+    if (title === 'AllOn4') {
+      navigate('/allon4')
+      setIsMenuOpen(false)
+      return
+    }
+
     if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
@@ -68,6 +74,7 @@ const Navbar = () => {
       Projects: 'ПРОЕКТЫ',
       Licenses: 'ЛИЦЕНЗИИ И СЕРТИФИКАТЫ',
       Price: 'ЦЕНЫ',
+      AllOn4: 'СТАТЬИ ',
     }
     return navTexts[title] || title.toUpperCase()
   }
@@ -104,7 +111,7 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
           {navLinks.map(({ title, href }) => (
             <li key={title}>
-              {isHomePage && title !== 'Licenses' && title !== 'Price' ? (
+              {isHomePage && title !== 'Licenses' && title !== 'Price' && title !== 'AllOn4' ? (
                 <ScrollLink
                   to={href === 'contact' ? '#' : href}
                   smooth={true}
@@ -178,7 +185,10 @@ const Navbar = () => {
               <ul className="flex flex-col gap-6">
                 {navLinks.map(({ title, href }) => (
                   <li key={title}>
-                    {isHomePage && title !== 'Licenses' && title !== 'Price' ? (
+                    {isHomePage &&
+                    title !== 'Licenses' &&
+                    title !== 'Price' &&
+                    title !== 'AllOn4' ? (
                       <ScrollLink
                         to={href === 'contact' ? '#' : href}
                         smooth={true}

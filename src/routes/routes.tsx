@@ -11,6 +11,7 @@ import VideoGallery from '~/components/video-gallery/VideoGallery'
 import { Link } from 'react-router-dom'
 import AddressMap from '~/components/address-map/AddressMap'
 import PricePage from '~/pages/price/Price'
+import AllOn4Page from '~/pages/all-on-4/AllOn4Page'
 
 // Lazy load pages
 
@@ -95,6 +96,10 @@ export const appRoutes: RouteObject[] = [
   {
     path: '/price',
     element: <PricePage />,
+  },
+  {
+    path: '/allon4',
+    element: <AllOn4Page />,
   },
   {
     path: '*',

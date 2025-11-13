@@ -3,4 +3,5 @@ export const navLinks = [
   { title: 'Price', href: 'price' },
   { title: 'Рабочий процесс', href: 'routine' },
   { title: 'Licenses', href: 'licenses' },
+  { title: 'AllOn4', href: 'allon4' },
 ]
