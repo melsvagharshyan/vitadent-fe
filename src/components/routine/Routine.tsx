@@ -76,6 +76,36 @@ const Routine = () => {
         </button>
       </div>
 
+      {/* All-on-4 Section */}
+      <div className="mt-20 pt-16">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300">
+            <img
+              src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1763033506/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg"
+              alt="ИМПЛАНТАЦИЯ «ВСЕ НА ЧЕТЫРЕХ»"
+              className="w-full h-auto object-cover"
+            />
+            <div className="p-6 bg-white">
+              <h3 className="text-gray-700 text-xl sm:text-2xl font-bold uppercase text-center mb-4">
+                ИМПЛАНТАЦИЯ <br></br> «ВСЕ НА ЧЕТЫРЕХ»
+              </h3>
+              <p className="text-[#1DA6E2] text-lg sm:text-xl font-medium text-center mb-6 max-w-2xl mx-auto">
+                современная методика восстановления зубного ряда, показания и этапы лечения
+              </p>
+              <div className="flex justify-center">
+                <button
+                  onClick={() => navigate('/allon4')}
+                  className="relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer bg-[#1DA6E2] hover:bg-[#0284e4] text-white py-3 px-8 rounded-md font-semibold group transform hover:scale-105"
+                >
+                  <span className="relative z-10">Узнать больше</span>
+                  <span className="absolute left-0 top-0 h-full w-full transform -translate-x-full bg-white opacity-10 group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Client Results Section */}
       <div className="mt-20 pt-16">
         <header className="max-w-screen-xl mx-auto text-center mb-10 sm:mb-12">

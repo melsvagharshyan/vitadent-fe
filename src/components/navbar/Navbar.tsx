@@ -168,7 +168,7 @@ const Navbar = () => {
               exit={{ opacity: 0 }}
             />
             <motion.div
-              className="fixed top-0 left-0 w-full h-1/2 bg-white z-[9999] shadow-xl p-8 flex flex-col"
+              className="fixed top-0 left-0 w-full h-1/1.8 bg-white z-[9999] shadow-xl p-8 flex flex-col"
               initial={{ y: '-100%' }}
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
