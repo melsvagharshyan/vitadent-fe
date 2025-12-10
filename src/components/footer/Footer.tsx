@@ -147,7 +147,7 @@ const Footer: React.FC = () => {
               className="cursor-pointer flex items-center gap-3"
             >
               <img
-                src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762437338/vita-logo_osqg0g.svg"
+                src="https://melsimages.blob.core.windows.net/images/vitadent-images/vita-logo_osqg0g.svg"
                 alt="Vitadent Logo"
                 width={240}
                 height={100}
@@ -166,7 +166,7 @@ const Footer: React.FC = () => {
               aria-label="Homepage"
             >
               <img
-                src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762437338/vita-logo_osqg0g.svg"
+                src="https://melsimages.blob.core.windows.net/images/vitadent-images/vita-logo_osqg0g.svg"
                 alt="Vitadent Logo"
                 width={240}
                 height={100}
