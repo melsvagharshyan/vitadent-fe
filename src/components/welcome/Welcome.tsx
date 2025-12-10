@@ -51,7 +51,7 @@ const Welcome = () => {
       animate="visible"
       exit="exit"
       style={{
-        backgroundImage: `url(https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762511177/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg)`,
+        backgroundImage: `url(https://melsimages.blob.core.windows.net/images/vitadent-images/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg)`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
