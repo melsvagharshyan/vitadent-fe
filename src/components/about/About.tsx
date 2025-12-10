@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import clinicImage from '~/assets/vita-images/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg'
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -11,8 +12,7 @@ const About = () => {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  const ClinicImage =
-    'https://melsimages.blob.core.windows.net/images/vitadent-images/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg'
+  const ClinicImage = clinicImage
 
   return (
     <section

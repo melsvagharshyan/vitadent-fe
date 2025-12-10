@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar'
 import TopInfoBar from './TopInfoBar'
 import { useMediaQuery } from 'react-responsive'
 import { Link as ScrollLink } from 'react-scroll'
+import headerImage from '~/assets/vita-images/2_jjjyxz.png'
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -39,9 +40,7 @@ const Header = () => {
       aria-label="Site header"
       className="w-full bg-cover bg-center relative overflow-hidden"
       style={{
-        backgroundImage: isMobile
-          ? `url(https://melsimages.blob.core.windows.net/images/vitadent-images/2_jjjyxz.png)`
-          : `url(https://melsimages.blob.core.windows.net/images/vitadent-images/2_jjjyxz.png)`,
+        backgroundImage: `url(${headerImage})`,
       }}
     >
       {/* Fixed top information bar */}

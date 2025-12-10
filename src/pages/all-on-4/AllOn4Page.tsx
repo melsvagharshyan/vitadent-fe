@@ -1,5 +1,8 @@
 import { ChevronLeft } from 'lucide-react'
 import { useEffect } from 'react'
+import image1 from '~/assets/vita-images/61055bcf1d4721479f94f9308fb11d29bfd48cd7_btl75e.jpg'
+import image2 from '~/assets/vita-images/im70014_sqayuo.jpg'
+import image3 from '~/assets/vita-images/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg'
 
 const AllOn4Page = () => {
   useEffect(() => {
@@ -107,7 +110,7 @@ const AllOn4Page = () => {
           <section className="bg-white rounded-lg shadow-md p-6 sm:p-8 mb-8">
             <div className="mb-6">
               <img
-                src="https://melsimages.blob.core.windows.net/images/vitadent-images/61055bcf1d4721479f94f9308fb11d29bfd48cd7_btl75e.jpg"
+                src={image1}
                 alt="All-on-4 имплантация"
                 className="w-full rounded-lg shadow-sm"
               />
@@ -180,7 +183,7 @@ const AllOn4Page = () => {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1DA6E2] mb-6">Этапы All-on-4</h2>
             <div className="mb-6">
               <img
-                src="https://melsimages.blob.core.windows.net/images/vitadent-images/im70014_sqayuo.jpg"
+                src={image2}
                 alt="Этапы имплантации All-on-4"
                 className="w-full rounded-lg shadow-sm"
               />
@@ -343,7 +346,7 @@ const AllOn4Page = () => {
             </h2>
             <div className="mb-6">
               <img
-                src="https://melsimages.blob.core.windows.net/images/vitadent-images/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg"
+                src={image3}
                 alt="Имплантация All-on-4"
                 className="w-full rounded-lg shadow-sm"
               />

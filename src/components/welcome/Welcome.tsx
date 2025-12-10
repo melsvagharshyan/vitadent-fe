@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import clinicImage from '~/assets/vita-images/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg'
+import logoImage from '~/assets/vita-images/vita-logo_osqg0g.svg'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -51,14 +53,14 @@ const Welcome = () => {
       animate="visible"
       exit="exit"
       style={{
-        backgroundImage: `url(https://melsimages.blob.core.windows.net/images/vitadent-images/0bca77a5910d18c3470d7c1353d82fd9_1_emjqxp.jpg)`,
+        backgroundImage: `url(${clinicImage})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
     >
       <motion.div className="flex items-center gap-3 mb-4" variants={textVariants}>
         <img
-          src="https://melsimages.blob.core.windows.net/images/vitadent-images/vita-logo_osqg0g.svg"
+          src={logoImage}
           alt="Vitadent Logo"
           width={240}
           height={100}

@@ -5,6 +5,7 @@ import Slider from 'react-slick'
 import { clientResults, specialistImages } from './utils/constants'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import allOn4Image from '~/assets/vita-images/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg'
 
 const Routine = () => {
   const navigate = useNavigate()
@@ -81,7 +82,7 @@ const Routine = () => {
         <div className="max-w-screen-xl mx-auto">
           <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300">
             <img
-              src="https://melsimages.blob.core.windows.net/images/vitadent-images/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg"
+              src={allOn4Image}
               alt="ИМПЛАНТАЦИЯ «ВСЕ НА ЧЕТЫРЕХ»"
               className="w-full h-auto object-cover"
             />

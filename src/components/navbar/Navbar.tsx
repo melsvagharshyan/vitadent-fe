@@ -6,6 +6,7 @@ import { CiMenuFries } from 'react-icons/ci'
 import clsx from 'clsx'
 import { navLinks } from './utils/constants'
 import { ContactModal } from '~/modals/ContactModal'
+import logoImage from '~/assets/vita-images/vita-logo_osqg0g.svg'
 
 const Navbar = () => {
   const location = useLocation()
@@ -100,7 +101,7 @@ const Navbar = () => {
           className="cursor-pointer flex items-center gap-2"
         >
           <img
-            src="https://melsimages.blob.core.windows.net/images/vitadent-images/vita-logo_osqg0g.svg"
+            src={logoImage}
             alt="Vitadent Logo"
             width={240}
             height={100}
