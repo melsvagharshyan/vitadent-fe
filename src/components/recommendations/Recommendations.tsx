@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import Slider from 'react-slick'
 import { useMemo, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
@@ -7,8 +7,8 @@ import { useGetRecommendationsQuery } from '~/app/recommendations/recommendation
 import { RecommendationModal } from '~/modals/RecommendationModal'
 import './recommendations.css'
 
-const defaultAvatar =
-  'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1746967371/orig_sxg7yl.svg'
+// const defaultAvatar =
+//   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1746967371/orig_sxg7yl.svg'
 
 const Recommendations = () => {
   const { data: recommendations } = useGetRecommendationsQuery()
