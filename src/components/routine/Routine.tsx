@@ -81,7 +81,7 @@ const Routine = () => {
         <div className="max-w-screen-xl mx-auto">
           <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300">
             <img
-              src="https://res.cloudinary.com/dxfqf6fgv/image/upload/v1763033506/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg"
+              src="https://melsimages.blob.core.windows.net/images/vitadent-images/implantaciya-zubov-all-on-4-830x350-10e_wdl7dx.jpg"
               alt="ИМПЛАНТАЦИЯ «ВСЕ НА ЧЕТЫРЕХ»"
               className="w-full h-auto object-cover"
             />
