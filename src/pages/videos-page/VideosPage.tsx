@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
 import Layout from '~/components/layout/Layout'
 import VideoGallery from '~/components/video-gallery/VideoGallery'
+import video1 from '~/assets/videos/AQM1Abu-BQ8DnTzEDvsPODuVsBcveFddqj0FVfpXge4Ad7EX-uJWIXhvhpUbCRkRiGAc_qikCCE-t-0oAs0uO3pgjPiKqDzE_2_lhzbt7 (2).mp4'
+import video2 from '~/assets/videos/AQMT9rElo-QHDaQ2pElU1Pc5wMMeRA-9KAaTUB3aYIeSxGXTPl81JAyVluF-9RpeLJP0QVKT_LjJorRHmoEDvjUXgNcsx62d_arqdaq (2).mp4'
 import video3 from '~/assets/videos/professionalnaia-gigiena-polosti-rta-1_E4tO295b_mdqalc (1).mov'
 import video4 from '~/assets/videos/Why_regular_check-ups_with_a_Dentist_matters__emj0lc.mp4'
 import video5 from '~/assets/videos/Pinterest_video_158751955610717267_puimh0.mp4'
@@ -49,14 +51,14 @@ const VideosPage = () => {
             videos={[
               {
                 id: 'v1',
-                url: 'https://melsimages.blob.core.windows.net/images/videos-vke/AQM1Abu-BQ8DnTzEDvsPODuVsBcveFddqj0FVfpXge4Ad7EX-uJWIXhvhpUbCRkRiGAc_qikCCE-t-0oAs0uO3pgjPiKqDzE_2_lhzbt7.mp4',
+                url: video1,
                 title: 'Профессиональная работа — Видео 1',
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
               },
               {
                 id: 'v2',
-                url: 'https://melsimages.blob.core.windows.net/images/videos-vke/AQMT9rElo-QHDaQ2pElU1Pc5wMMeRA-9KAaTUB3aYIeSxGXTPl81JAyVluF-9RpeLJP0QVKT_LjJorRHmoEDvjUXgNcsx62d_arqdaq.mp4',
+                url: video2,
                 title: 'Профессиональная работа — Видео 2',
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
