@@ -3,7 +3,7 @@ export const specialists = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754586434/vahan/2025-08-07_10.06.37_mxr8hm.jpg',
+      'https://melsimages.blob.core.windows.net/images/vitadent-images/2025-08-07_10.06.37_mxr8hm.jpg',
     title: 'Варданян Ваган Араикович',
     description:
       'Семейный врач-стоматолог общей практики, выполняет эстетически  реставрации зубов, лечение, протезирование и удаление всех видов.',
@@ -11,7 +11,7 @@ export const specialists = [
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762519050/2025-11-07_16.36.42_tqqavv.jpg',
+      'https://melsimages.blob.core.windows.net/images/vitadent-images/2025-11-07_16.36.42_tqqavv.jpg',
     title: 'Драчкова Ирина Станиславовна',
     description:
       'Врач стоматолог высшей категории, специализируется на высококачественном лечении зубов и десен, хирургии',
@@ -19,7 +19,7 @@ export const specialists = [
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762522362/2025-11-07_17.32.05_puqcvf.jpg',
+      'https://melsimages.blob.core.windows.net/images/vitadent-images/2025-11-07_17.32.05_puqcvf.jpg',
     title: 'Зоткин Виталий Сергеевич',
     description:
       'Врач стоматолог 1й категории, специализируется на высоко эстетичных реставрациях зубов, лечение и протезирование всех видов',

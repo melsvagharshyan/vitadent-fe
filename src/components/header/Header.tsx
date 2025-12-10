@@ -40,8 +40,8 @@ const Header = () => {
       className="w-full bg-cover bg-center relative overflow-hidden"
       style={{
         backgroundImage: isMobile
-          ? `url(https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762511838/2_jjjyxz.png)`
-          : `url(https://res.cloudinary.com/dxfqf6fgv/image/upload/v1762511838/2_jjjyxz.png)`,
+          ? `url(https://melsimages.blob.core.windows.net/images/vitadent-images/2_jjjyxz.png)`
+          : `url(https://melsimages.blob.core.windows.net/images/vitadent-images/2_jjjyxz.png)`,
       }}
     >
       {/* Fixed top information bar */}
