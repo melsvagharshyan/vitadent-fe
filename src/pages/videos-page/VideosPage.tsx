@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
 import Layout from '~/components/layout/Layout'
 import VideoGallery from '~/components/video-gallery/VideoGallery'
+import video3 from '~/assets/videos/professionalnaia-gigiena-polosti-rta-1_E4tO295b_mdqalc (1).mov'
+import video4 from '~/assets/videos/Why_regular_check-ups_with_a_Dentist_matters__emj0lc.mp4'
+import video5 from '~/assets/videos/Pinterest_video_158751955610717267_puimh0.mp4'
+import video6 from '~/assets/videos/a9e84aa5c0cd466fa7a950b2f0befc66_t1_rcdoef.mp4'
 
 const VideosPage = () => {
   const navigate = useNavigate()
@@ -59,28 +63,28 @@ const VideosPage = () => {
               },
               {
                 id: 'v3',
-                url: 'https://melsimages.blob.core.windows.net/images/videos-vitadent/professionalnaia-gigiena-polosti-rta-1_E4tO295b_mdqalc.mov',
+                url: video3,
                 title: 'Профессиональная работа — Видео 1',
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
               },
               {
                 id: 'v4',
-                url: 'https://melsimages.blob.core.windows.net/images/videos-vitadent/Why_regular_check-ups_with_a_Dentist_matters__emj0lc.mp4',
+                url: video4,
                 title: 'Профессиональная работа — Видео 1',
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
               },
               {
                 id: 'v5',
-                url: 'https://melsimages.blob.core.windows.net/images/videos-vitadent/Pinterest_video_158751955610717267_puimh0.mp4',
+                url: video5,
                 title: 'Профессиональная работа — Видео 1',
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
               },
               {
                 id: 'v6',
-                url: 'https://melsimages.blob.core.windows.net/images/videos-vitadent/a9e84aa5c0cd466fa7a950b2f0befc66_t1_rcdoef.mp4',
+                url: video6,
                 title: 'Профессиональная работа — Видео 1',
                 thumbnail:
                   'https://res.cloudinary.com/dxfqf6fgv/image/upload/v1754661287/vahan/2025-08-08_06.49.57_azze6v.jpg',
