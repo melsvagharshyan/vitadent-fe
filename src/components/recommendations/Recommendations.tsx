@@ -76,7 +76,7 @@ const Recommendations = () => {
               <div className="bg-[#2B354B] text-white rounded-xl shadow-xl border border-black/10 overflow-hidden max-w-[900px] w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto min-h-[180px] sm:min-h-[220px]">
                 <div className="flex flex-col md:flex-row items-center md:items-stretch gap-6 p-6 sm:p-8">
                   {/* Avatar */}
-                  <div className="flex justify-center md:justify-start md:items-center">
+                  {/* <div className="flex justify-center md:justify-start md:items-center">
                     <div className="relative">
                       <img
                         src={rec.image?.url || defaultAvatar}
@@ -87,7 +87,7 @@ const Recommendations = () => {
                         <FaQuoteLeft className="text-[#1DA6E2] text-sm" />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">

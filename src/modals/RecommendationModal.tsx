@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
-import { FaStar, FaUpload } from 'react-icons/fa'
-import { IoClose } from 'react-icons/io5'
+import { FaStar } from 'react-icons/fa'
+// import { IoClose } from 'react-icons/io5'
 import { useCreateRecommendationsMutation } from '~/app/recommendations/recommendations.api'
 import { Base64 } from '~/hooks/Base64'
 import { recommendationFormSchema, RecommendationFormSchema } from './utils/validations'
@@ -18,7 +18,7 @@ interface Props {
 
 export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null)
-  const [image, setImage] = useState<any>('')
+  // const [image, setImage] = useState<any>('')
   const [createRecommendation, { isLoading }] = useCreateRecommendationsMutation()
 
   const {
@@ -37,12 +37,12 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
     },
   })
 
-  const uploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-    const base64 = await Base64(file)
-    setImage(base64)
-  }
+  // const uploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files?.[0]
+  //   if (!file) return
+  //   const base64 = await Base64(file)
+  //   setImage(base64)
+  // }
 
   const getErrorText = (message: string) => {
     const errorTexts: { [key: string]: string } = {
@@ -58,7 +58,8 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
   }
 
   const onSubmit = (data: RecommendationFormSchema) => {
-    createRecommendation({ ...data, image })
+    // createRecommendation({ ...data, image }) ete nkarov senc
+    createRecommendation({ ...data })
       .unwrap()
       .then(() => {
         toast.success('Отзыв успешно отправлен!', {
@@ -167,7 +168,7 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
             )}
           </div>
 
-          <div>
+          {/* <div>
             <label className="block mb-1 font-medium text-gray-700">Изображение</label>
             <div className="flex items-center gap-3">
               <label className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg cursor-pointer hover:bg-gray-200 transition">
@@ -193,7 +194,7 @@ export const RecommendationModal: FC<Props> = ({ isOpen, onClose }) => {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
 
           <div className="flex gap-3 pt-4">
             <button
